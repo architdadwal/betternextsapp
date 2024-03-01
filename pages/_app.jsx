@@ -1,4 +1,4 @@
-import '../styles/global.css';
+ import '../styles/global.css';
 import { CookiesProvider } from 'react-cookie';
 
 export default function App({

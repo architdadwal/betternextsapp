@@ -32,6 +32,7 @@ export default async function handler(req, res) {
         // Redirect to the home page with the subdomain in the URL
         const subdomain = username.toLowerCase();
         res.redirect(`http://${subdomain}.localhost:3000/`);
+        console.log("1", username);
       } else {
         res.redirect("/login?msg=Incorrect username or password");
       }

@@ -1,32 +1,39 @@
 import Layout from '../components/layout'
 import { getCookie } from 'cookies-next';
-import Link from 'next/link'
 
-export default function HomePage( {username} ) {
+import Link from 'next/link'
+import HomeContent from '../components/homecontent';
+
+export default function HomePage({ username }) {
     return (
         <Layout pageTitle="Home">
-        {username ?
-        <>
-            <h2>Hi {username}</h2>
-            <Link href="/profile">Profile</Link><br/>
-            <Link href="/api/logout">Logout</Link>
-        </>: 
-        <>
-            <h2>Log in</h2>
-            <Link href="/login">Login</Link><br/>
-            <Link href="/signup">Signup</Link>
-        </>
-        }
+            <div className="bg-dark" style={{ minHeight: "100vh" }}>
+                {username ?
+                    <> console.log("1", username);
+                        <h2>Hi {username}</h2>
+                        <Link href="/profile">Profile</Link><br/>
+                        <Link href="/api/logout">Logout</Link>
+                    </>
+                    :
+                    <HomeContent/>
+                }
+            </div>
         </Layout>
     );
 }
 
+
+
 export async function getServerSideProps(context) {
-    const req = context.req
-    const res = context.res
-    var username = getCookie('username', { req, res });
-    if (username == undefined){
-        username = false;
+    const req = context.req;
+    const res = context.res;
+    let username = getCookie(req, 'username');
+    
+    // Check if username is undefined or null
+    if (!username) {
+        username = null;
     }
-    return { props: {username} };
-};
+    
+    return { props: { username } };
+}
+

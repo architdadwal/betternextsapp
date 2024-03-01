@@ -1,9 +1,16 @@
 import Head from 'next/head';
-
+//  import '../styles/global.css'
+import 'bootstrap/dist/css/bootstrap.css'
 export const siteTitle = "Login Signup Nextjs";
+import { useEffect } from 'react';
 
 export default function Layout({ pageTitle, children }) {
+ 
   const title = "Login Signup Nextjs";
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap.js')
+  })
+  
   return (
     <div>
       <Head>
