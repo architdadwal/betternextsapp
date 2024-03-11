@@ -78,7 +78,7 @@ const HomeContent = () => {
                                         <SubdomainRedirect/>
                                         <redirect/>
                                         
-                                        <Link className="text-dark" href="/login">Login</Link>
+                                        {/* <Link className="text-dark" href="/login">Login</Link> */}
                                     </div>
                                 </div>
                             </div>

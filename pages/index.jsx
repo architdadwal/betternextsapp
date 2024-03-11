@@ -34,6 +34,14 @@ export default function HomePage() {
     useEffect(() => {
         console.log('Username state updated to:', username); // This will log when username updates
     }, [username]);
+
+
+    const handleLogout = () => {
+        localStorage.removeItem('token'); // This removes the stored token
+        setUsername(null); // Reset the username state to indicate the user is logged out
+      // Redirect to the main domain (adjust accordingly for production)
+    window.location.href = 'http://localhost:3000';
+    };
     
     return (
         <Layout pageTitle="Home">
@@ -42,7 +50,7 @@ export default function HomePage() {
                     <>
                         <h2>Hi {username}</h2>
                         <Link href="/profile">Profile</Link><br/>
-                        <Link href="/api/logout">Logout</Link>
+                        <button onClick={handleLogout}>Logout</button>
                     </>
                     :
                     <HomeContent/>

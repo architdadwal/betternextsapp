@@ -1,26 +1,29 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const SubdomainRedirect = () => {
-  const [subdomain, setSubdomain] = useState('');
+  const [username, setUsername] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMsg(''); // Clear previous errors
+
     try {
-      const response = await fetch('/api/redirect', {
+      const response = await fetch('/api/checkuser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ subdomain }),
+        body: JSON.stringify({ username }),
       });
+
       if (response.ok) {
-        // Redirect to the login page of the subdomain
-        window.location.href = `http://${subdomain}.localhost:3000/login`;
+        // If user exists, update URL to user's subdomain
+        window.location.href = `http://${username}.localhost:3000/login`;
       } else {
         // Handle error response
         const errorData = await response.json();
-        setErrorMsg(errorData.msg);
+        setErrorMsg(errorData.error || 'User not found');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -32,14 +35,14 @@ const SubdomainRedirect = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Enter your username:
+          Enter username:
           <input
             type="text"
-            value={subdomain}
-            onChange={(e) => setSubdomain(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </label>
-        <button type="submit">Go</button>
+        <button type="submit">Check User</button>
       </form>
       {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
     </div>
