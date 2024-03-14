@@ -118,3 +118,42 @@ border: 1px solid black;
 .linkdiv{
   margin: 20px;
 }
+.logoutbutton{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: inherit!important; /* Makes the link color inherit from its parent */
+  text-decoration: none!important; /* Removes underline */
+}
+.setup h2{
+  padding:20px;
+  text-align: center;
+  font-size:xx-large;
+  font-weight: 500;
+}
+.bg-custom h2{
+  padding:10px;
+  text-align: center;
+  font-size:xx-large;
+  font-weight: 500;
+}
+.bg-custom{
+  background: #F1F9F7;
+  padding: 25px;
+}
+.existinguserbutton{
+  margin: 10px;
+}
+.userinput{
+  margin: 10px!important;
+}
+.submit{
+  padding: 15px 30px;
+    background: black;
+    color: white;
+    align-self: center;
+  
+border-radius: 15px;
+}

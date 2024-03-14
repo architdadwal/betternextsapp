@@ -34,15 +34,19 @@ const SubdomainRedirect = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <div className="existinguser">
         <label>
           Enter username:
           <input
+          className="userinput"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
-        <button type="submit">Check User</button>
+        <div className="existinguserbutton">  <button className="submit" type="submit">Check User</button></div>
+        
+        </div>
       </form>
       {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
     </div>

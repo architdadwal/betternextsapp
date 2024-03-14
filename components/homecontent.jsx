@@ -8,9 +8,9 @@ import loginimage from '../public/newlogo.png';
 const HomeContent = () => {
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-md-6 bg-dark text-white">
-                    {/* Left Column */}
+            <div className="row" style={{ display:"flex",justifyContent:"center" }}>
+                {/* <div className="col-md-6 bg-dark text-white">
+                  
                     <div className="text-center" style={{ margin: "100px", border: "0.8px solid white", borderRadius: "10px", padding: "25px", boxShadow: "0 0 10px rgba(126, 126, 126, 0.5)" }}>
                         <h1>Welcome to Betternexts</h1>
                         <p>Creating good schooling experiences together </p>
@@ -21,12 +21,12 @@ const HomeContent = () => {
                             height={350}
                         />
                     </div>
-                </div>
-                <div className="col-md-6 bg-dark text-white">
+                </div> */}
+                <div className="col-md-6 bg-white text-dark">
                     {/* Right Column */}
                     <div className="text-center" style={{ margin: "25px" }}>
                         <h1>Lets start a journey towards a better future</h1>
-                        <div className="card bg-light border border-secondary rounded" style={{ margin: "20px", borderRadius: "20px" }}>
+                        <div className="card border border-secondary rounded" style={{ margin: "20px", borderRadius: "20px" }}>
                             <div className="card-body">
                                 {/* <h5 className="card-title">Login / Signup</h5> */}
                                 <div className="justify-content-around">
@@ -53,10 +53,10 @@ const HomeContent = () => {
         <label style={{ flex: '0 0 120px', padding: '10px', textAlign:"left", fontSize: "larger" }}>School</label>
         <input minLength="" name="schoolname" id="schoolname" type="text" placeholder='School' style={{ flex: '1', padding: '10px' }} />
     </div>
-    <div className='labelclass' style={{ display: 'flex', alignItems: 'center', margin: '10px' }}>
+    {/* <div className='labelclass' style={{ display: 'flex', alignItems: 'center', margin: '10px' }}>
         <label style={{ flex: '0 0 120px', padding: '10px', textAlign:"left", fontSize: "larger" }}>City</label>
         <input minLength="" name="city" id="city" type="text" placeholder='City' style={{ flex: '1', padding: '10px' }} />
-    </div>
+    </div> */}
     <div className='labelclass' style={{ display: 'flex', alignItems: 'center', margin: '5px' }}>
         <label style={{ flex: '0 0 120px', padding: '10px', textAlign:"left", fontSize: "larger"}}>Username</label>
         <input minLength="3" name="username" id="username" type="text" placeholder='We use it for setting your personalized domain' required style={{ flex: '1', padding: '10px' }} />
@@ -69,11 +69,11 @@ const HomeContent = () => {
         <label style={{ flex: '0 0 120px', padding: '10px', textAlign:"left", fontSize: "larger" }}>Re-enter Password</label>
         <input minLength="5" name="passwordagain" id="passwordagain" type="password" placeholder='Re-enter Password' required style={{ flex: '1', padding: '10px' }} />
     </div>
-    <input style={{ padding: "15px 30px",background:"black",color: "white", alignSelf: 'center', marginTop: '20px' }} type="submit" value="Signup" />
+    <input style={{ padding: "15px 30px",background:"black",color: "white", alignSelf: 'center' }} type="submit" value="Signup" />
 </form>
 
                                     </div>
-                                    <div style={{ padding: "20px" }}>
+                                    <div >
                                         <h4>If you are an existing user</h4>
                                         <SubdomainRedirect/>
                                         <redirect/>
@@ -86,12 +86,12 @@ const HomeContent = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
+            {/* <div className="row">
                 <div className="col-md-12 text-center mt-4">
-                    {/* Divider */}
+                  
                     <hr style={{ borderColor: 'white' }} />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

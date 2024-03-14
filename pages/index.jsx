@@ -3,6 +3,7 @@ import Link from 'next/link';
 import HomeContent from '../components/homecontent';
 import { useEffect, useState } from 'react';
 import jwt from 'jsonwebtoken'; // Correctly import jwt
+import GridCards from '../components/gridCards';
 
 export default function HomePage() {
     const [username, setUsername] = useState(null);
@@ -45,12 +46,15 @@ export default function HomePage() {
     
     return (
         <Layout pageTitle="Home">
-            <div className="bg-dark" style={{ minHeight: "100vh" }}>
+            <div className="bg-custom" style={{ minHeight: "100vh" }}>
                 {username ?
                     <>
-                        <h2>Hi {username}</h2>
-                        <Link href="/profile">Profile</Link><br/>
-                        <button onClick={handleLogout}>Logout</button>
+                        <h2 style={{ textAlign: "center"  }}>Hi {username}</h2>
+                        {/* <Link href="/profile">Profile</Link><br/> */}
+                        
+                        <GridCards/>
+
+                      <div className="logoutbutton"> <button onClick={handleLogout}>Logout</button></div>  
                     </>
                     :
                     <HomeContent/>

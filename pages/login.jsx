@@ -44,7 +44,7 @@ export default function LoginPage({ username }) {
 
     return (
         <Layout pageTitle="Login">
-            <div className="container-fluid bg-dark" style={{ minHeight: "100vh" }}>
+            <div className="container-fluid bg-white" style={{ minHeight: "100vh" }}>
                 <div className="row justify-content-center" style={{ minHeight: "100vh" }}>
                     <div className="col-md-6 text-white">
                         <div className="card bg-light text-dark shadow shadow-lg" style={{ padding: "20px", margin: "40px" }}>
